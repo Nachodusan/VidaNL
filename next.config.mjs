@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   typescript: {
@@ -9,11 +9,11 @@ const nextConfig = {
     unoptimized: true,
   },
   // ✅ Static export for GitHub Pages
-  output: 'export',
-  // ✅ Use the repo name as basePath on Pages: https://<user>.github.io/<repo>
-  basePath: isProd ? '/Vidanl' : '',
-  assetPrefix: isProd ? '/Vidanl/' : '',
+  output: "export",
+  // ✅ BasePath y AssetPrefix corregidos (coinciden con el nombre exacto del repo)
+  basePath: isProd ? "/VidaNL" : "",
+  assetPrefix: isProd ? "/VidaNL/" : "",
   trailingSlash: true,
-}
+};
 
-export default nextConfig
+export default nextConfig;

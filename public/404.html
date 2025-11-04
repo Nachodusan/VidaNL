@@ -1,14 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>404 – Página no encontrada</title>
-  <meta http-equiv="refresh" content="0; url=/Vidanl/"/>
-</head>
-<body>
-  <h1>404</h1>
-  <p>Redirigiendo al inicio…</p>
-  <script>location.replace('/Vidanl/');</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 – Página no encontrada</title>
+    <!-- 🔁 Redirige automáticamente al inicio del sitio en GitHub Pages -->
+    <meta http-equiv="refresh" content="0; url=/VidaNL/" />
+  </head>
+  <body>
+    <h1>404</h1>
+    <p>Redirigiendo al inicio…</p>
+    <script>
+      // 🔁 Redirección de respaldo para navegadores que no procesan meta refresh
+      location.replace("/VidaNL/");
+    </script>
+  </body>
 </html>
