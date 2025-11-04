@@ -37,7 +37,7 @@ jobs:
 
       - name: Build static site (Next 16 output: export)
         env:
-          # ⚠️ Cambia esto si tu repo se llama distinto (respetando mayúsculas/minúsculas)
+          # ⚠️ Nombre EXACTO del repositorio (respetar mayúsculas)
           NEXT_PUBLIC_BASEPATH: /VidaNL
         run: pnpm run build
 
