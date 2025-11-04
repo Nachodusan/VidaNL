@@ -6,13 +6,13 @@
     "node": ">=20"
   },
   "scripts": {
-    "clean": "rimraf out .next",
+    "clean": "node -e \"const fs=require('fs');for(const d of ['out','.next']){try{fs.rmSync(d,{recursive:true,force:true});}catch(e){}}\"",
     "prebuild": "pnpm run clean",
-    "build": "next build && next export",
+    "build": "next build",
     "dev": "next dev",
     "start": "next start",
     "lint": "eslint . || true",
-    "export": "echo \"Static export handled by 'next build && next export'\""
+    "export": "echo \"Static export is handled by 'output: export' in next.config.mjs\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -74,7 +74,6 @@
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
-    "typescript": "^5",
-    "rimraf": "^5.0.5"
+    "typescript": "^5"
   }
 }

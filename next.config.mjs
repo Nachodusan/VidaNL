@@ -18,7 +18,6 @@ const nextConfig = {
   trailingSlash: true, // evita 404 en rutas estáticas
   images: { unoptimized: true },
   typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
 
   // Clave para que funcione bajo /VidaNL en producción
   basePath,
