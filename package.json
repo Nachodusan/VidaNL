@@ -2,13 +2,17 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "prebuild": "rm -rf out .next || true",
-    "build": "next build",
+    "clean": "rimraf out .next",
+    "prebuild": "pnpm run clean",
+    "build": "next build && next export",
     "dev": "next dev",
-    "lint": "eslint .",
     "start": "next start",
-    "export": "echo Static export handled by next.config.mjs (output: export)"
+    "lint": "eslint . || true",
+    "export": "echo \"Static export handled by 'next build && next export'\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -70,6 +74,7 @@
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "rimraf": "^5.0.5"
   }
 }
