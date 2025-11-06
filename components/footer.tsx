@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 import Image from "next/image"
+import { withBase } from "@/lib/path"
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <Image src="/images/vida-logo.png" alt="VIDA Logo" width={120} height={48} className="h-12 w-auto" />
+              <Image src={withBase("/images/vida-logo.png")} alt="VIDA Logo" width={120} height={48} className="h-12 w-auto" />
             </div>
             <p className="mb-6 max-w-sm text-pretty text-sm leading-relaxed text-gray-300 dark:text-gray-400">
               Un movimiento político comprometido con el bienestar de todos. Juntos construimos un futuro de justicia,

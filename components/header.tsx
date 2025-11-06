@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
+import { withBase } from "@/lib/path"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -46,7 +47,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/vida-logo.png"
+            src={withBase("/images/vida-logo.png")}
             alt="VIDA - Partido Político"
             width={120}
             height={48}
