@@ -16,7 +16,9 @@ export function Header() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -87,19 +89,25 @@ export function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
-          {/* 👇 SIEMPRE visible y ANTES que “Súmate” */}
-          <div className="order-1">
+          {/* 🔆 ThemeToggle ANTES (orden absoluto) */}
+          <div className="order-first flex-none">
             <ThemeToggle />
           </div>
 
-          <Button asChild size="sm" className="order-2 bg-blue-600 text-white hover:bg-blue-700 shadow-md">
+          {/* 🔵 Botón Súmate DESPUÉS */}
+          <Button
+            asChild
+            size="sm"
+            className="order-none ml-0 flex-none bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+          >
             <Link href="/afiliate">Súmate</Link>
           </Button>
 
+          {/* ☰ Menú móvil al final */}
           <Button
             variant="ghost"
             size="sm"
-            className="order-3 lg:hidden text-gray-900 dark:text-white"
+            className="order-last lg:hidden text-gray-900 dark:text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
