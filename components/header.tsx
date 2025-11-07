@@ -56,7 +56,7 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Navegación escritorio */}
         <nav className="hidden items-center gap-6 lg:flex">
           <Link href="/" className="text-sm font-semibold text-gray-900 dark:text-white">
             Inicio
@@ -87,27 +87,21 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Right actions */}
+        {/* 🔆 Botón de modo noche y “Súmate” */}
         <div className="flex items-center gap-3">
-          {/* 🔆 ThemeToggle ANTES (orden absoluto) */}
-          <div className="order-first flex-none">
-            <ThemeToggle />
-          </div>
+          {/* 🔆 ThemeToggle antes */}
+          <ThemeToggle />
 
-          {/* 🔵 Botón Súmate DESPUÉS */}
-          <Button
-            asChild
-            size="sm"
-            className="order-none ml-0 flex-none bg-blue-600 text-white hover:bg-blue-700 shadow-md"
-          >
+          {/* 🔵 Botón Súmate */}
+          <Button asChild size="sm" className="bg-blue-600 text-white hover:bg-blue-700 shadow-md">
             <Link href="/afiliate">Súmate</Link>
           </Button>
 
-          {/* ☰ Menú móvil al final */}
+          {/* ☰ Menú móvil */}
           <Button
             variant="ghost"
             size="sm"
-            className="order-last lg:hidden text-gray-900 dark:text-white"
+            className="lg:hidden text-gray-900 dark:text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -115,7 +109,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menú móvil */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-yellow-300 bg-yellow-400 dark:border-yellow-600 dark:bg-yellow-500">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
