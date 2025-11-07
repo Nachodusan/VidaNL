@@ -16,9 +16,7 @@ export function Header() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -87,16 +85,21 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Right actions */}
         <div className="flex items-center gap-3">
-          {pathname !== "/" && <ThemeToggle />}
+          {/* 👇 SIEMPRE visible y ANTES que “Súmate” */}
+          <div className="order-1">
+            <ThemeToggle />
+          </div>
 
-          <Button asChild size="sm" className="bg-blue-600 text-white hover:bg-blue-700 shadow-md">
+          <Button asChild size="sm" className="order-2 bg-blue-600 text-white hover:bg-blue-700 shadow-md">
             <Link href="/afiliate">Súmate</Link>
           </Button>
+
           <Button
             variant="ghost"
             size="sm"
-            className="lg:hidden text-gray-900 dark:text-white"
+            className="order-3 lg:hidden text-gray-900 dark:text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
