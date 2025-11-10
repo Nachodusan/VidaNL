@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 
-function Empty({ className, ...props }: React.ComponentProps<'div'>) {
+function Empty({ className, props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty"
@@ -10,12 +10,12 @@ function Empty({ className, ...props }: React.ComponentProps<'div'>) {
         'flex min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-lg border-dashed p-6 text-center text-balance md:p-12',
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }
 
-function EmptyHeader({ className, ...props }: React.ComponentProps<'div'>) {
+function EmptyHeader({ className, props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-header"
@@ -23,7 +23,7 @@ function EmptyHeader({ className, ...props }: React.ComponentProps<'div'>) {
         'flex max-w-sm flex-col items-center gap-2 text-center',
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }
@@ -46,29 +46,29 @@ const emptyMediaVariants = cva(
 function EmptyMedia({
   className,
   variant = 'default',
-  ...props
+  props
 }: React.ComponentProps<'div'> & VariantProps<typeof emptyMediaVariants>) {
   return (
     <div
       data-slot="empty-icon"
       data-variant={variant}
       className={cn(emptyMediaVariants({ variant, className }))}
-      {...props}
+      {props}
     />
   )
 }
 
-function EmptyTitle({ className, ...props }: React.ComponentProps<'div'>) {
+function EmptyTitle({ className, props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-title"
       className={cn('text-lg font-medium tracking-tight', className)}
-      {...props}
+      {props}
     />
   )
 }
 
-function EmptyDescription({ className, ...props }: React.ComponentProps<'p'>) {
+function EmptyDescription({ className, props }: React.ComponentProps<'p'>) {
   return (
     <div
       data-slot="empty-description"
@@ -76,12 +76,12 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<'p'>) {
         'text-muted-foreground [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4',
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }
 
-function EmptyContent({ className, ...props }: React.ComponentProps<'div'>) {
+function EmptyContent({ className, props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-content"
@@ -89,7 +89,7 @@ function EmptyContent({ className, ...props }: React.ComponentProps<'div'>) {
         'flex w-full max-w-sm min-w-0 flex-col items-center gap-4 text-sm text-balance',
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }

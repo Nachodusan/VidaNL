@@ -6,36 +6,35 @@ import { FloatingContactButton } from "@/components/floating-contact-button"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"] })
+const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "App",
-  description: "Ignacio Duque"
+  title: "Vida NL",
+  description: "Sitio oficial"
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
+        {/* Dark mode bootstrapping */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                const m = localStorage.getItem('theme');
+                if (m === 'dark' || (!m && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                   document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
                 }
               } catch (e) {}
             `,
           }}
         />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={\`\${geist.className} font-sans antialiased bg-background text-foreground\`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <FloatingContactButton />

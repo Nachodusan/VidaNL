@@ -49,11 +49,11 @@ function Carousel({
   plugins,
   className,
   children,
-  ...props
+  props
 }: React.ComponentProps<'div'> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
     {
-      ...opts,
+      opts,
       axis: orientation === 'horizontal' ? 'x' : 'y',
     },
     plugins,
@@ -124,7 +124,7 @@ function Carousel({
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
-        {...props}
+        {props}
       >
         {children}
       </div>
@@ -132,7 +132,7 @@ function Carousel({
   )
 }
 
-function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselContent({ className, props }: React.ComponentProps<'div'>) {
   const { carouselRef, orientation } = useCarousel()
 
   return (
@@ -147,13 +147,13 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
           orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
           className,
         )}
-        {...props}
+        {props}
       />
     </div>
   )
 }
 
-function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
+function CarouselItem({ className, props }: React.ComponentProps<'div'>) {
   const { orientation } = useCarousel()
 
   return (
@@ -166,7 +166,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }
@@ -175,7 +175,7 @@ function CarouselPrevious({
   className,
   variant = 'outline',
   size = 'icon',
-  ...props
+  props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
@@ -193,7 +193,7 @@ function CarouselPrevious({
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
-      {...props}
+      {props}
     >
       <ArrowLeft />
       <span className="sr-only">Previous slide</span>
@@ -205,7 +205,7 @@ function CarouselNext({
   className,
   variant = 'outline',
   size = 'icon',
-  ...props
+  props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
@@ -223,7 +223,7 @@ function CarouselNext({
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
-      {...props}
+      {props}
     >
       <ArrowRight />
       <span className="sr-only">Next slide</span>

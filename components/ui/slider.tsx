@@ -11,7 +11,7 @@ function Slider({
   value,
   min = 0,
   max = 100,
-  ...props
+  props
 }: React.ComponentProps<typeof SliderPrimitive.Root>) {
   const _values = React.useMemo(
     () =>
@@ -34,7 +34,7 @@ function Slider({
         'relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
         className,
       )}
-      {...props}
+      {props}
     >
       <SliderPrimitive.Track
         data-slot="slider-track"

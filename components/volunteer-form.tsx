@@ -24,7 +24,7 @@ export function VolunteerForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
-      ...prev,
+      prev,
       [name]: value,
     }))
   }
@@ -168,7 +168,7 @@ export function VolunteerForm() {
                   onChange={handleChange}
                   required={formData.area === "otro"}
                   className="w-full"
-                  placeholder="Cuéntanos en qué área deseas participar..."
+                  placeholder="Cuéntanos en qué área deseas participar"
                   rows={3}
                 />
               </div>

@@ -24,7 +24,7 @@ const buttonGroupVariants = cva(
 function ButtonGroup({
   className,
   orientation,
-  ...props
+  props
 }: React.ComponentProps<'div'> & VariantProps<typeof buttonGroupVariants>) {
   return (
     <div
@@ -32,7 +32,7 @@ function ButtonGroup({
       data-slot="button-group"
       data-orientation={orientation}
       className={cn(buttonGroupVariants({ orientation }), className)}
-      {...props}
+      {props}
     />
   )
 }
@@ -40,7 +40,7 @@ function ButtonGroup({
 function ButtonGroupText({
   className,
   asChild = false,
-  ...props
+  props
 }: React.ComponentProps<'div'> & {
   asChild?: boolean
 }) {
@@ -52,7 +52,7 @@ function ButtonGroupText({
         "bg-muted flex items-center gap-2 rounded-md border px-4 text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }
@@ -60,7 +60,7 @@ function ButtonGroupText({
 function ButtonGroupSeparator({
   className,
   orientation = 'vertical',
-  ...props
+  props
 }: React.ComponentProps<typeof Separator>) {
   return (
     <Separator
@@ -70,7 +70,7 @@ function ButtonGroupSeparator({
         'bg-input relative !m-0 self-stretch data-[orientation=vertical]:h-auto',
         className,
       )}
-      {...props}
+      {props}
     />
   )
 }

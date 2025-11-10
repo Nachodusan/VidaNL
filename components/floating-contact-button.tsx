@@ -20,7 +20,7 @@ export function FloatingContactButton() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ prev, [name]: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -113,7 +113,7 @@ export function FloatingContactButton() {
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <Send className="mr-2 w-4 h-4" />
-                {isSubmitting ? "Enviando..." : "Enviar"}
+                {isSubmitting ? "Enviando" : "Enviar"}
               </Button>
             </form>
           </div>

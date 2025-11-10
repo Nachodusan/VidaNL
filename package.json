@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "node -e \"const fs=require('fs');for(const d of ['out','.next']){try{fs.rmSync(d,{recursive:true,force:true});}catch(e){}}\"",
     "prebuild": "pnpm run clean",
-    "build": "next build",
+    "build": "next build && next export",
     "dev": "next dev",
     "start": "next start",
     "lint": "eslint . || true",
@@ -75,5 +75,6 @@
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5"
-  }
+  },
+  "homepage": "/vidanl-ghpages"
 }

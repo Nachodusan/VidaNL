@@ -1,14 +1,13 @@
 import { Header } from "@/components/header"
-import { Affiliate } from "@/components/affiliate"
+import { Volunteer } from "@/components/volunteer"
 import { Footer } from "@/components/footer"
 
-export default function AfiliatePage() {
+export default function AfiliatePage() {  // misma ruta, mismo look&feel
   return (
-    // ✅ Ahora usa variables del tema (funciona en modo oscuro y claro)
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <Affiliate />
+        <Volunteer />
       </main>
       <Footer />
     </div>
