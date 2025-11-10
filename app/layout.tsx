@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={\`\${geist.className} font-sans antialiased bg-background text-foreground\`}>
+      <body className={`${geist.className} font-sans antialiased bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <FloatingContactButton />
