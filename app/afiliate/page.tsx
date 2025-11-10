@@ -4,7 +4,8 @@ import { Footer } from "@/components/footer"
 
 export default function AfiliatePage() {
   return (
-    <div className="min-h-screen bg-white">
+    // ✅ Ahora usa variables del tema (funciona en modo oscuro y claro)
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
         <Affiliate />
